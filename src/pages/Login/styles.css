@@ -1,0 +1,150 @@
+.central {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding: 25px 48px;
+}
+
+.login-container section.form {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    background-color: #1b7fe4;
+    border-radius: 3px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 36px;
+    margin: 6px 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    opacity: 0.9;
+    box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.6);
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    max-width: 304px;
+    height: 36px;
+    margin: 6px 0;
+    border-radius: 3px;
+    padding: 0 12px;
+    transition: 0.3;
+    background-color: #FAFBFC;
+    border: 1px solid rgba(0,0,0,0.6);
+} 
+
+input[type=checkbox] {
+    margin: 6px  10px  6px 0;
+}
+
+input[type=text]:focus , input[type=password]:focus {
+    opacity: 0.8; 
+    border: 1px solid #26a0da;
+    box-shadow: rgba(0,0,0,0.2) 1px 1px 5px 0;
+    transition: 0.3s;
+    background: #fff;
+}
+
+label {
+    color: rgba(0,0,0,0.6);
+
+}
+
+img#logo-mexplica {
+    max-width: 304px;
+    height: auto;
+    border-radius: 3px;
+}
+
+img#google-logo {
+    background: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    margin-right: 8px;
+    padding: 2px;
+}
+
+img#facebook-logo {
+    background: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    margin-right: 8px;
+    padding: 2px;
+}
+
+.login-facebook-google {
+    clear: both;
+    display: flex;
+    flex-direction: column;
+}
+
+a.login-redes-sociais {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    background-color: #1b7fe4;
+    border-radius: 3px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    width: 100%;
+    height: 36px;
+    margin: 6px 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+a.login-redes-sociais:hover {
+    opacity: 0.9;
+    box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.6);
+
+}
+
+a#linkfacebook {
+    margin:5px 0 0 0;
+}
+
+a#linkgoogle {
+    margin: 12px 0 10px 0;
+}
+
+.fazer-cadastro {
+    color: rgba(0,0,0,0.6);
+    margin: 10px 0;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.6);
+}
+
+.fazer-cadastro a {
+    text-decoration: none;
+    color: #26a0da;
+}
+
