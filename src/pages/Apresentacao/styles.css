@@ -1,0 +1,58 @@
+p {
+    color: rgba(0,0,0,0.7);
+}
+
+#info {
+    width: 90%;
+    max-width: 620px;
+    margin: 20px;
+}
+.img-logo {
+    max-width: 90%;
+    height: auto;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#sing-in .img-logo {
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+.info-content {
+    margin: 5px 10px 10px;
+}
+
+.info-content p {
+    font-size: 20px;
+    text-align: justify;
+}
+
+#sing-in, p {
+    font-size: 18px ;
+    margin: 6px 10px 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link-sing-in {
+    width: 100%;
+    background-color: #1b7fe4;
+    border-radius: 3px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    width: auto;
+    font-size: 1.1rem;
+    min-height: 36px;
+    margin: 5px 0;
+    padding: 7px 0 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+p.link-sing-in  {
+    margin: 0 7px;
+}

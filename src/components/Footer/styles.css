@@ -1,0 +1,14 @@
+.Footer-mexplica {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+}
+
+#copyright-mexplica  {
+    color: #000;
+    margin: auto;
+    font-size: 15px;
+}

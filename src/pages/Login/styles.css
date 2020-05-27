@@ -44,7 +44,7 @@ input[type=submit]:hover {
     box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.6);
 }
 
-input[type=text], input[type=password] {
+.inputs-login {
     width: 100%;
     max-width: 304px;
     height: 36px;
@@ -60,7 +60,7 @@ input[type=checkbox] {
     margin: 6px  10px  6px 0;
 }
 
-input[type=text]:focus , input[type=password]:focus {
+.inputs-login:focus {
     opacity: 0.8; 
     border: 1px solid #26a0da;
     box-shadow: rgba(0,0,0,0.2) 1px 1px 5px 0;
@@ -68,9 +68,8 @@ input[type=text]:focus , input[type=password]:focus {
     background: #fff;
 }
 
-label {
-    color: rgba(0,0,0,0.6);
-
+.form-login label {
+    color: rgba(0,0,0,0.7);
 }
 
 img#logo-mexplica {
@@ -100,7 +99,7 @@ img#facebook-logo {
 .login-facebook-google {
     clear: both;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
 a.login-redes-sociais {
@@ -121,18 +120,19 @@ a.login-redes-sociais {
     cursor: pointer;
 }
 
+a#linkfacebook {
+    margin-right: 4px;
+    background-color: #3b5998;
+}
+
+a#linkgoogle {
+    margin-left: 4px;
+}
+
 a.login-redes-sociais:hover {
     opacity: 0.9;
     box-shadow: 1px 2px 5px 0 rgba(0,0,0,0.6);
 
-}
-
-a#linkfacebook {
-    margin:5px 0 0 0;
-}
-
-a#linkgoogle {
-    margin: 12px 0 10px 0;
 }
 
 .fazer-cadastro {

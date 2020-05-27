@@ -1,0 +1,173 @@
+.Header-mexplica {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: inline-block;
+}
+
+.container-header {
+    width: 1120px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+#mexplica-logo-svg {
+    max-height: 34px;
+    margin: 8px 10px 8px 5px;
+}
+
+nav ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-item a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 10px;
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    transition: 0.3s;
+}
+
+.dropdown-item a:hover {
+    color: rgb(83, 152, 255);
+    border-bottom: 3px solid rgb(83, 152, 255);
+    border-top: 3px solid white;
+}
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown-item ul{
+    display: none;
+    position: absolute;
+}
+
+.dropdown-item:hover ul {
+    display: block;
+}
+
+.dropdown-sub-item a {
+    font-size: 0.8rem;
+    border: none;
+    display: inline-block;
+    background-color: white;
+    width: 160px;
+}
+
+.dropdown-sub-item a:hover {
+    color: #000;
+    border: none;
+    background-color: #eeeeee;
+}
+
+.search {
+    margin: auto;
+}
+
+#form-group-header {
+    display: inline-block;
+}
+
+#inp-pesquisa {
+    border: solid 1px rgb(153, 153, 153);
+    padding-left: 10px;
+    border-right: none;
+    height: 26px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+
+#btn-pesquisa {
+    height: 26px;
+    border: solid 1px rgb(153, 153, 153);
+    border-left: none;
+    padding: 0 8px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: 0.3s;
+}
+
+#btn-pesquisa:hover {
+    background-color: rgb(219, 219, 219);
+}
+
+.usuario-info {
+    display: flex;
+}
+
+#profile-img {
+    width: 36px;
+    margin: auto ;
+    border-radius: 50%;
+}
+
+#user-name {
+    margin: auto ;
+    height: 50px;
+}
+
+.dropdown-user {
+    padding: 0;
+    height: 50px;
+    width: 212px;
+}
+
+.dropdown-user a p {
+    margin: auto;
+    font-size: 15px;
+    color: #000;
+
+}
+
+.dropdown-user a  {
+    display: flex;
+}
+
+.dropdown-user ul{
+    display: none;
+    position: absolute;
+}
+
+.dropdown-user:hover ul {
+    display: block;
+}
+
+.dropdown-user-item a {
+    font-size: 1rem;
+    padding: 10px 0 ;
+    width: 212px;
+    border: none;
+    display: inline-block;
+    background-color: white;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+    transition: 0.3s;
+}
+
+.dropdown-user-item a:hover {
+    background-color: #eeeeee;
+} 
+
+#lupa {
+    width: 20px;
+    height: 20px;
+}
+
+

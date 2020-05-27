@@ -1,6 +1,6 @@
 .cadastro-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: auto;
     background: white;
     border-radius: 10px;
@@ -46,7 +46,7 @@ a#linkgoogle {
     font-size: 16px;
 }
 
-input[type=text], input[type=password], input[type=email] {
+.inputs-login {
     width: 100%;
     max-width: 100%;
     height: 36px;
@@ -63,7 +63,16 @@ input[type=text], input[type=password], input[type=email] {
     font-size: 15px;
 }
 
-input[type=text]:focus , input[type=password]:focus, input[type=email]:focus {
+.termos-uso label {
+    font-weight: normal;
+    color: rgba(0,0,0,0.7);
+}
+
+.fazer-login p, .fazer-login p a{
+    font-size: 15px;
+}
+
+.inputs-login:focus {
     opacity: 0.8; 
     border: 1px solid #26a0da;
     box-shadow: rgba(0,0,0,0.2) 1px 1px 5px 0;
@@ -74,5 +83,5 @@ input[type=text]:focus , input[type=password]:focus, input[type=email]:focus {
 .fazer-login {
     margin: 10px 0;
     padding-top: 10px;
-    border-top: 1px solid rgba(0,0,0,0.6); 
+    border-top: 1px solid rgba(0,0,0,0.7); 
 }
