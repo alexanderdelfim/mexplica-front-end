@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'; 
 
 import mexplicaLogo from '../../assets/img/mexplica-logo-horizontal.svg';
-import GoogleLogo from '../../assets/font-awesome-icons/google-brands.svg'
-import FacebookLogo from '../../assets/font-awesome-icons/facebook-brands-2.svg'
+import LoginFacebook from '../../components/FacebookLoginBtn/Facebook'
+
 
 import api from '../../services/api';
 
@@ -42,8 +42,8 @@ export default function Cadastrar() {
                 <div className="content-group">
                     <h1>Crie sua conta</h1>
                     <div className="login-facebook-google">
-                        <a className="login-redes-sociais" id="linkfacebook" href="/facebook"><img id="facebook-logo" src={FacebookLogo} alt="Facebook"/>Entrar com</a>
-                        <a className="login-redes-sociais" id="linkgoogle" href="/google"><img id="google-logo" src={GoogleLogo} alt="Google"/> Entrar com</a>
+                        <LoginFacebook />
+                        <p>ou</p>
                     </div>
                     <form className="form" onSubmit={handleCadastrar}>
 

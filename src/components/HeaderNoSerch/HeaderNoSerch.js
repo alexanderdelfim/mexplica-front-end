@@ -8,19 +8,16 @@ import MexplicaLogoHorizontal from '../../assets/img/mexplica-logo-horizontal.sv
 
 export default class Header extends Component {
         render() {
-
             let isLogged = false;
             let usuario_nome = '';
             let usuario_foto = '';
-
+            
             if(localStorage.getItem('fbData')) {
                 const data = localStorage.getItem('fbData');
                 const newData = JSON.parse(data);
                 usuario_nome = newData.name;
                 usuario_foto = newData.picture;
                 isLogged = true;
-                localStorage.setItem('usuario_nome', usuario_nome)
-                localStorage.setItem('usuario_foto', usuario_foto)
                 localStorage.setItem('isLogged', isLogged)
             }
 
@@ -30,10 +27,6 @@ export default class Header extends Component {
                 localStorage.setItem('usuario_foto', usuario_foto)/*localStorage.getItem('usuario_foto') */;
                 isLogged = true;
                 localStorage.setItem('isLogged', isLogged)
-            }
-
-            function handleLogout() {
-                localStorage.clear();
             }
 
             
@@ -67,8 +60,7 @@ export default class Header extends Component {
                     </nav>
                     <div className="search">
                         <form id="form-group-header" >
-                            <input type="search" name="inp-pesquisa" id="inp-pesquisa"/>
-                            <button type="submit" id="btn-pesquisa">Pesquisar</button>
+                            <button type="submit" id="btn-pesquisa" disabled >Pesquisar</button>
                         </form>
                     </div>
                     <div className="usuario-info">
@@ -79,7 +71,7 @@ export default class Header extends Component {
                                     <Link to="/perfil">Perfil</Link> 
                                 </li>
                                 <li className="dropdown-user-item">
-                                    <Link onClick={handleLogout} to="/">Sair</Link> 
+                                    <Link to="">Sair</Link> 
                                 </li>
                             </ul>
                         </li>

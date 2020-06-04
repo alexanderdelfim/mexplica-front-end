@@ -1,35 +1,47 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import LoginFacebook from '../../components/FacebookLoginBtn/Facebook'
+
 
 import api from '../../services/api';
 
 import './styles.css';
 
 import mexplicaLogo from '../../assets/img/mexplica-logo.svg';
-import GoogleLogo from '../../assets/font-awesome-icons/google-brands.svg'
+
 
 export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const isLogged = localStorage.getItem('isLogged')
 
+    const history = useHistory();
 
-    async function handleLogin(e) {
-        e.preventDefault();
-        
-        const data = {
-            email,
-            password
-        }
-
-        try{
-            const response = await api.post('sessions', data);
-            console.log(response)
-        } catch (err) {
-            alert('Erro no login, tente novamente.')
-        }
+    if (isLogged) {
+        return(<Redirect to="/inicio"/>)
     }
+        async function handleLogin(e) {
+            e.preventDefault();
+            
+            const data = {
+                email,
+                password
+            }
+
+            try{
+                const response = await api.post('sessions', data);
+                localStorage.setItem('tokenAcesso', response.data.token)
+                localStorage.setItem('usuario_id', response.data.user.id)
+                localStorage.setItem('usuario_nome', response.data.user.name)
+                localStorage.setItem('usuario_email', response.data.user.email)
+                history.push('/inicio')
+            } catch (err) {
+                alert('Erro no login, tente novamente.')
+            }
+        }
+
 
     return (
         <div className="central">
@@ -37,7 +49,6 @@ export default function Login() {
                 <img id="logo-mexplica" src={mexplicaLogo} alt="Mexplica"/>
                 <div className="login-facebook-google">
                     <LoginFacebook />
-                    <a className="login-redes-sociais" id="linkgoogle" href="/google"><img id="google-logo" src={GoogleLogo} alt="Google"/> Entrar com</a>
                 </div>
                 <section className="form">
                     <form className="form-login" onSubmit={handleLogin}>

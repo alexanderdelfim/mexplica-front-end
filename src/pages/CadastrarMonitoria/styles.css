@@ -33,6 +33,17 @@ label {
     margin: 30px 15px 30px 20px;
 }
 
+.usuario-content-here {
+    display: flex;
+    margin: 10px;
+}
+
+.em-construcao {
+    margin: 10px;
+    background-color: darkgrey;
+    height: 120px;
+}
+
 .form-group-monitoria {
     max-width: 790px;
     border-radius: 5px;
@@ -43,9 +54,9 @@ label {
 #txt-descricao {
     width: 100%;
     height: 150px;
-    padding: 15px;
+    padding: 10px 15px;
     box-sizing: border-box;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     resize: none;
 }
 
@@ -66,12 +77,12 @@ label {
 
 .left-input {
     width: 100%;
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .right-input {
     width: 100%;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 #valor-monitoria {
@@ -92,4 +103,22 @@ label {
     font-size: 15px;
     font-weight: normal;
     border-radius: 4px;
+}
+
+#img-perfil-info {
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(82, 157, 255, 0.8);
+}
+
+.info-user {
+    margin: 10px;
+}
+
+#info-usuario-cad {
+    font-size: 14px;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
 }

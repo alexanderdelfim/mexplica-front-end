@@ -1,0 +1,203 @@
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    max-width: 1120px;
+}
+
+.main-content > div {
+    flex: 1 1 240px;
+}
+
+.filtros {
+    background-color: white;
+    width: 100%;
+    max-width: 200px;
+    margin: 30px 15px 30px 20px;
+    border-radius: 4px;
+}
+
+.filtros h2 {
+    font-weight: 500;
+    padding: 2px 5px 10px;
+    margin: 10px;
+    border-bottom: 1px solid rgb(107, 107, 107);
+}
+
+.filtros ul {
+    margin: 10px 15px;
+}
+
+.filtros ul li {
+    margin-bottom: 5px;
+}
+
+
+.monitorias-titulo {
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#pesquisa-group {
+    display: flex;
+    flex-direction: row;
+}
+
+#tipo-pesquisa {
+    padding: 5px 10px;
+    height: 30px;
+    width: 250px;
+    border: 1px solid rgb(128, 128, 128);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+#input-pesquisar-tipo {
+    border: 1px solid rgb(128, 128, 128);
+    border-left: none;
+    border-right: none;
+    padding: 5px 10px;
+    height: 30px;
+    width: 100%;
+    min-width: 150px;
+}
+#btn-pesquisar-tipo {
+    border: 1px solid rgb(128, 128, 128);
+    height: 30px;
+    max-width: 200px;
+    width: 150px;
+    min-width: 150px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.monitorias-list{
+    margin: 30px 20px 30px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.monitoria-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+
+.monitoria-item:hover {
+    border: 2px solid rgb(83, 152, 255,0.7);
+}
+
+.monitoria-infos{
+    display: flex;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+.monitoria-header {
+    border-bottom: 1px solid rgb(153, 153, 153);
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.monitoria-item h2 {
+    color: rgb(51, 51, 51);
+    max-width: 550px;
+    padding: 0 5px 0;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.monitoria-item strong, p {
+    color: rgb(51, 51, 51);
+    font-weight: normal;
+    font-size: 18px;
+    padding: 0;
+    margin: 5px;
+}
+
+#descricao-css {
+    padding: 10px 0 5px;
+    font-size: 16px;
+}
+
+.info-monitoria {
+    display: inline-block;
+}
+
+.tags {
+    display: flex;
+}
+
+.tag {
+    background-color: rgb(220, 220, 220);
+    width: auto;
+    border-radius: 6px;
+    margin: 10px 0 0;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    cursor: pointer;
+    background-color: rgb(195, 195, 195);
+}
+
+.btn-detalhes {
+    margin: 0 5px;
+    min-width: 150px;
+    min-height: 30px;
+    padding: 5px ;
+    border: none;
+    background-color: #007aff;
+    color: white;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
+.preco-monitoria {
+    color: rgb(30, 179, 0);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(207, 207, 207, 0.5);
+}
+
+.modal-content {
+    position: absolute;
+    min-width: 600px;
+    min-height: 300px;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+}
+
+
