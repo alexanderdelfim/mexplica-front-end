@@ -36,6 +36,11 @@ export default function Login() {
                 localStorage.setItem('usuario_id', response.data.user.id)
                 localStorage.setItem('usuario_nome', response.data.user.name)
                 localStorage.setItem('usuario_email', response.data.user.email)
+                localStorage.setItem('price_per_hour', response.data.user.price_per_hour)
+                localStorage.setItem('about_me_tutor', response.data.user.about_me_tutor)
+                localStorage.setItem('about_me_student', response.data.user.about_me_student)
+                localStorage.setItem('scope_area', response.data.user.scope_area)
+                localStorage.setItem('tagline', response.data.user.tagline)
                 history.push('/inicio')
             } catch (err) {
                 alert('Erro no login, tente novamente.')
