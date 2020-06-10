@@ -9,6 +9,9 @@ import Monitorias from './pages/Monitoria';
 import CadastrarMonitoria from './pages/CadastrarMonitoria'
 import SuasMonitorias from './pages/SuasMonitorias'
 import MonitoriasPublicadas from './pages/MonitoriasPublicadas'
+import MeuPerfil from './pages/Perfil'
+import EditarPerfil from './pages/EditarPerfil'
+
 
 
 
@@ -24,6 +27,8 @@ export default function Roures() {
                 <Route path="/suas-monitorias" component={SuasMonitorias} />
                 <Route path="/publicadas" component={MonitoriasPublicadas} />
                 <Route path="/cadastrar-monitoria" component={CadastrarMonitoria} />
+                <Route path="/editar-perfil" component={EditarPerfil} />
+                <Route path="/perfil" component={MeuPerfil} />
             </Switch>
         </BrowserRouter>
     )
