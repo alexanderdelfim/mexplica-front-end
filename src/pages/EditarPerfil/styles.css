@@ -1,0 +1,80 @@
+.form{
+    padding: 20px;
+}
+.container-perfil{
+    margin: 60px auto;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 600px;
+    height: 800px;
+    padding: 10px 10px;
+}
+.container-perfil h1{
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+}
+.container-perfil .editar-monitor, .editar-aluno{
+    font-size: 30px;
+}
+.container-perfil span{
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px;
+    display: block;
+}
+.container-perfil #sobre-mim-monitor, #sobre-mim-aluno{
+    border-radius: 3px;
+    border: solid 1px #0c0c0c;
+    margin: 10px 0;
+    min-height: 95px;
+    padding: 0 10px;
+    width: 90%;
+}
+.container-perfil #valor-por-hora{
+    border-radius: 3px;
+    border: solid 1px #0c0c0c;
+    margin: 10px 0;
+    min-height: 30px;
+    padding: 0 10px;;
+    width: 90%;
+}
+.container-perfil #area-conhecimento-monitor{
+    border-radius: 3px;
+    border: solid 1px #0c0c0c;
+    margin: 10px 0;
+    min-height: 30px;
+    padding: 0 10px;
+    width: 90%;
+}
+.container-perfil #tag-disciplina-edit{
+    border-radius: 3px;
+    border: solid 1px #0c0c0c;
+    margin: 10px 0;
+    min-height: 30px;
+    padding: 0 10px;
+    width: 90%;
+}
+.container-perfil .btn-editar-perfil{
+    width: 20%;
+    align-items: center;
+    position: relative;
+    padding: 8px 8px;
+}
+
+.container-perfil .btn-cancel-edit{
+    width:116px;
+    height: 36px;
+    align-items: center;
+    position: relative;
+    padding: 8px 8px;
+    border: none;
+    background-color: rgb(235, 59, 59);
+    border-radius: 3px;
+    margin: 20px;
+}
+.container-perfil .btn-cancel-edit span{
+    color: #fff;
+    font-size: 14px;
+}
