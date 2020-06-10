@@ -1,0 +1,292 @@
+.main{
+    display: block;
+}
+/* Barra de tipo do perfil */
+.selecionar-perfil{
+    background: #f1f1f1;
+    width: 100%;
+    height: 52px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left: auto;
+}
+.selecionar-perfil span{
+    font-size: 25px;
+    margin-right: 5px;
+    margin-left: 25px;
+}
+.selecionar-perfil button{
+    padding: 14px 14px;
+    font-size: 20px;
+    width: 18%;
+    align-items: center;
+    color: #000;
+    font-weight: 500;
+    height: 52px;
+}
+.selecionar-perfil .btn-monitor{
+    margin-left: 15px;
+    border-radius: 5px;
+    border: none;
+
+}
+.selecionar-perfil .btn-monitor:hover{
+    border-bottom: 5px solid #32bad9;
+}
+.selecionar-perfil .btn-aluno{
+    border-radius: 5px;
+    border: none;
+
+}
+.selecionar-perfil .btn-aluno:hover{
+    border-bottom: 5px solid #32bad9;
+}
+.selecionar-perfil .btn-editar{
+    margin-left: 15em;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: #eb4c4c;
+    padding: 4px 0.2px;
+    height: 45px;
+}
+.selecionar-perfil .btn-editar span{
+    color: #fff;
+    text-align: center;
+    margin: 0 5px;
+
+}
+.selecionar-perfil .btn-editar:hover{
+    background-color: #e72828;
+}
+.wrapper{
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+}
+/* info perfil*/
+.info-perfil{
+    margin: 50px 150px;
+    width: 800px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.info-perfil .edit #edit-button{
+    max-width: 30px;
+    margin-left: 95%;
+    position: absolute;
+}
+/* info perfil monitor*/
+.info-perfil .valor-monitoria{ 
+    margin-left: 78%; 
+}
+.info-perfil .valor-monitoria .valor{
+    position: absolute;
+    font-size: 24px;
+    color: #0ad254;
+}
+.info-perfil #user-monitor{
+    width: 125px;
+    position: absolute;
+    margin: 15px 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(82, 157, 255, 0.8);
+}
+.info-perfil .dados-perfil{
+    margin-left: 30%;
+
+}
+.info-perfil .dados-perfil .nome{
+    font-size: 26px;
+}
+.info-perfil .dados-perfil .tipo-usuario{
+    font-size: 12px;
+}
+.info-perfil .dados-perfil .star-icons{
+    margin-top: 5px;
+    width: 100%;
+    display: block;
+    
+}
+.info-perfil .dados-perfil .star-icons #star-button{
+    display: inline-block;;
+    width: 20px;
+}
+.info-perfil .dados-perfil .star-icons span{
+    font-size: 12px;
+    padding: 5px;
+}
+
+
+.info-perfil .dados-perfil .star-icons{
+    margin-top: 5px;
+    width: 100%;
+    display: block;
+    
+}
+.info-perfil .dados-perfil .materia .nome-materia{
+    font-size: 20px;
+}
+.info-perfil .dados-perfil .materia span{
+    font-size: 16px;
+}
+.info-perfil .dados-perfil .tags label{
+    background-color: #cbcbcb;
+    font-size: 14px;
+    width: 150px;
+    height: 21px;
+    border-radius: 6px;
+    padding: 4px 3px;
+    margin-left: 5px;
+}
+/* info perfil aluno*/
+.info-perfil-aluno{
+    margin: 50px 150px;
+    width: 800px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.info-perfil-aluno .edit #edit-button{
+    max-width: 30px;
+    margin-left: 95%;
+    position: absolute;
+}
+.info-perfil-aluno #user-aluno{
+    width: 125px;
+    position: absolute;
+    margin: 40px 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(82, 157, 255, 0.8);
+}
+
+.info-perfil-aluno .dados-perfil-aluno {
+    margin-left: 30%;
+    margin-top: 3%;
+    position: absolute;
+}
+.info-perfil-aluno .dados-perfil-aluno  .nome{
+    margin-bottom: 100px;
+    font-size: 26px;
+}
+.info-perfil-aluno .dados-perfil-aluno  .tipo-usuario{
+    font-size: 12px;
+}
+.info-perfil-aluno .dados-perfil-aluno  .star-icons{
+    margin-top: 5px;
+    width: 100%;
+    display: block;
+    
+}
+.info-perfil-aluno .dados-perfil-aluno .star-icons #star-button{
+    display: inline-block;;
+    width: 20px;
+}
+.info-perfil-aluno .dados-perfil-aluno  .star-icons span{
+    font-size: 12px;
+    padding: 5px;
+}
+.info-perfil-aluno .dados-perfil .data-de-registro .data-cadastro{
+    color: red;
+}
+
+/* Sobre Mim */
+.sobre-mim{
+    margin: 50px 150px;
+    width: 800px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+    padding: 10px 10px;
+}
+.sobre-mim .edit #edit-button{
+    max-width: 30px;
+    margin-left: 95%;
+    position: absolute;
+}
+.sobre-mim input{
+    margin: 20px 50px;
+    padding: 4px;
+    width: 700px;
+    height: 50px;
+    
+}
+.sobre-mim .edit span{
+    padding: 20px 20px;
+}
+.sobre-mim .sobre-mim-aluno{
+    max-width: 15px;
+    height: 100px;
+    padding: 10px 50px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.sobre-mim .sobre-mim-monitor{
+    max-width: 15px;
+    height: 100px;
+    padding: 10px 45px;
+    font-size: 16px;
+    font-weight: 500;
+ 
+}
+/* Histórico */
+.historico{
+    margin: 50px 150px;
+    width: 800px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.historico .edit #edit-button{
+    max-width: 30px;
+    margin-left: 95%;
+    position: absolute;
+}
+.historico input{
+    margin: 20px 50px;
+    padding: 4px;
+    width: 700px;
+    height: 50px;
+    background: #fff;
+    border: none;
+}
+/* Idioma */
+.idioma{
+    margin: 50px 150px;
+    width: 800px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+.idioma .edit #edit-button{
+    max-width: 30px;
+    margin-left: 95%;
+    position: absolute;
+}
+.idioma input{
+    margin: 20px 50px;
+    padding: 4px;
+    width: 700px;
+    height: 50px;
+    background: #fff;
+    border: none;
+}
+/* Edit icon */
+.edit #edit-button{
+    cursor: pointer;
+}
+.edit span{
+    font-size: 32px;
+    position: relative;
+    color: #686868;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+
+
