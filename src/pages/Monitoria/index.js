@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Modal from 'react-modal'
-import Header from '../../components/HeaderNoSerch/HeaderNoSerch'
+
+import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
+import Modal from '../../components/Modal/ModalDetalhes/ModalBtnDetalhes'
 
 import api from '../../services/api'
 
@@ -10,7 +11,7 @@ import './styles.css';
 export default function Monitoria() {
 
     const [monitorias, setMonitorias] = useState([]);
-    const [modalIsOpen, setModalIsOpen] = useState(false)
+    const [isModalVisible, setIsModalVisible] = useState(false)
 
     useEffect(() => {
         loadMonitorias();
@@ -19,6 +20,12 @@ export default function Monitoria() {
     const loadMonitorias = async () => {
         const response = await api.get('monitorias');
         setMonitorias(response.data);
+        console.log(response.data);
+    }
+
+    const loadModal = async (id) => {
+        localStorage.setItem('monitoria_id', id);
+        setIsModalVisible(true);
     }
 
     return (
@@ -28,38 +35,28 @@ export default function Monitoria() {
                     <div className="filtros">
                         <h2>Filtros</h2>
                         <ul>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
-                            <li><input type="checkbox" name="teste" id="1"/> Em construção</li>
+                            <li><input type="checkbox" name="teste" id="1"/> Não Implementado</li>
+                            
                         </ul>
                     </div>
                     <div className="monitorias-list">
                         <div className="monitorias-titulo">
-                                    <input id="tipo-pesquisa" type="text" list="tipo-de-pesquisa" placeholder="Tipo de Conteudo"/>
+                                    <input id="tipo-pesquisa" type="text" list="tipo-de-pesquisa" disabled placeholder="Tipo de Conteudo"/>
                                     <datalist id="tipo-de-pesquisa">
                                         <option value="Monitorias"></option>
                                         <option value="Alunos"></option>
                                     </datalist>
-                                    <input id="input-pesquisar-tipo" type="text" name="pesquisar-alunos-monitorias" placeholder="Ex. Desemvolvimento Web"/>
-                                    <input id="btn-pesquisar-tipo" type="button" value="Pesquisar"/>
+                                    <input id="input-pesquisar-tipo" type="text" disabled name="pesquisar-alunos-monitorias" placeholder="Ex. Desemvolvimento Web"/>
+                                    <input id="btn-pesquisar-tipo" disabled type="button" value="Pesquisar"/>
                             </div>
                         <div className="monitorias-list-itens">
                             {monitorias.map(monitoria => (
                             <div className="monitoria-item" key={monitoria.id}>
+                                
                                 <div className="monitoria-header">
                                     <h2>{monitoria.title}</h2>
-                                    <div className="btn-div">
-                                            <button className="btn-detalhes" onClick={() => setModalIsOpen(true)}>Entrar em contato</button>
-                                            <Modal className="modal-content" isOpen={modalIsOpen} overlayClassName="overlay">
-                                                <div className="modal-infos">
-                                                    <h2>Em construção</h2>
-                                                    <button onClick={() => setModalIsOpen(false)}>Fechar</button>
-                                                </div>
-                                            </Modal>
+                                    <div className="btn-div-d">
+                                        <button className="btn-detalhes" onClick={() =>  loadModal(monitoria.id) }>Entrar em contato</button>
                                     </div>
                                 </div>
                                 <p id="descricao-css">{monitoria.description}</p>
@@ -74,6 +71,9 @@ export default function Monitoria() {
                                 </div>
                             </div>
                             ))}
+                            <div className="modal-here">
+                                {isModalVisible ? <Modal onClose={() => setIsModalVisible(false)}></Modal> : null}
+                            </div>
                         </div>
                     </div>
                 </div>

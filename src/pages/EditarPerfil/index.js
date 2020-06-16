@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
 import './styles.css';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import Modal from '../../components/Modal/ModalCancelar/ModalBtnCancelar'
 
 export default function CadastrarPerfil() {
     const [about_me_tutor, setAboutMeTutor] = useState('');
@@ -13,8 +14,13 @@ export default function CadastrarPerfil() {
     const [price_per_hour, setPricePerHour] = useState('');
     const [scope_area, setScopeArea] = useState('');
     const [tagline, setTagline] = useState('');
+    const [isModalVisible, setIsModalVisible] = useState(false)
 
     const history = useHistory();
+
+    const loadModal = async (i) => {
+        setIsModalVisible(true);
+    }
     
     async function handleEditarPerfil(e) {
         e.preventDefault();
@@ -43,8 +49,10 @@ export default function CadastrarPerfil() {
             <Header />
             <div className="container-perfil">
             <form className="form" onSubmit={handleEditarPerfil}>
-                <h1>Cadastrar Perifl</h1>
-                <label className="editar-monitor">Monitor</label><p></p>
+                <h1>Alterar dados do perifl</h1>
+                <div className="divisao"></div>
+
+                <h2 className="editar-monitor">Monitor</h2>
                 <div className="sobre-mim-monitor">
                     <span>Sobre Mim</span>
                     <textarea className="input-css"
@@ -56,7 +64,7 @@ export default function CadastrarPerfil() {
                         onChange={e => setAboutMeTutor(e.target.value)}
                     >{localStorage.getItem('about_me_tutor')}</textarea>
                 </div>
-               
+
                 <div className="preco-hora">
                     <span>Valor por hora:</span>
                     <input className="input-css"
@@ -93,7 +101,8 @@ export default function CadastrarPerfil() {
                         onChange={e => setTagline(e.target.value)}
                     ></input>
                 </div>
-                <label className="editar-aluno">Aluno</label><p></p>
+                <div className="divisao"></div>
+                <h2 className="editar-aluno">Aluno</h2>
                 <div className="sobre-mim-aluno">
                     <span>Sobre Mim</span>
                     <textarea className="input-css"
@@ -105,10 +114,15 @@ export default function CadastrarPerfil() {
                         onChange={e => setAboutMeStudent(e.target.value)}
                     ></textarea>
                 </div>
-                <input className="btn-editar-perfil" type="submit" value="Salvar"/>
-                <button className="btn-cancel-edit" ><Link to="/perfil"><span>Cancelar</span></Link></button>
+                <div className="btn-salvar-cancelar">
+                    <input className="btn-salvar-edit" type="submit" value="Salvar"/>
+                    <button className="btn-cancel-edit" onClick={loadModal}>Cancelar</button>
+                </div>
                 </form>
             </div>
+            <div className="modal-here">
+                    {isModalVisible ? <Modal onClose={() => setIsModalVisible(false)}></Modal> : null}
+                </div>
             <Footer />
         </div>
     )

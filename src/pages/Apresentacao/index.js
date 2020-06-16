@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 
 import mexplicaLogo from '../../assets/img/mexplica-logo-horizontal.svg';
@@ -8,6 +8,11 @@ import mexplicaLogov1 from '../../assets/img/mexplica-logo.svg';
 import './styles.css';
 
 export default function Apresentacao() {
+    const isLogged = localStorage.getItem('isLogged')
+
+    if (isLogged) {
+        return(<Redirect to="/inicio"/>)
+    }
 
     return(
         <div className="central">

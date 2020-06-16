@@ -2,6 +2,8 @@ import React from 'react'
 
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
+import UserInfoArea from '../../components/UserInfo/UserInfo'
+import RecivedProposals from '../../components/Modal/RecivedProposals/RecivedProposals'
 
 import './styles.css';
 
@@ -9,23 +11,19 @@ export default function Inicio() {
 
     return(
     <div>
-        <div className="Main">
+        <div className="main">
         <Header />
             <div className="dashboard-content">
-                <div className="info">
-                </div>
                 <div className="user-area">
-                    <div className="user-info">
-                        <p>User name</p>
-                        <p>User info</p>
-                    </div>
+                    <UserInfoArea />
                     <div className="content-user">
-                        <p>test</p>
+                        <RecivedProposals />
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
-        <Footer />
     </div>
     )
 }
+

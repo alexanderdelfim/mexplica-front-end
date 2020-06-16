@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom'; 
+import { Link, useHistory, Redirect } from 'react-router-dom'; 
 
 import mexplicaLogo from '../../assets/img/mexplica-logo-horizontal.svg';
 import LoginFacebook from '../../components/FacebookLoginBtn/Facebook'
@@ -15,7 +15,13 @@ export default function Cadastrar() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const isLogged = localStorage.getItem('isLogged')
+
     const history = useHistory();
+
+    if (isLogged) {
+        return(<Redirect to="/inicio"/>)
+    }
 
     async function handleCadastrar(e) {
         e.preventDefault();

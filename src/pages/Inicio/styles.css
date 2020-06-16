@@ -3,8 +3,14 @@
     width: 100%;
     max-width: 1120px;
     margin: auto;
-
+    min-height: 88.9vh;
 }
+
+.main {
+    display: flex;
+    flex-direction: column
+}
+
 
 .info {
     margin: 20px 20px 10px;
@@ -32,12 +38,11 @@
 }
 
 .content-user {
-    margin: 10px 20px 10px 10px;
-    height: 100px;
+    margin: 20px;
+    min-height: 100px;
     width: 100%;
     max-width: 790px;
     min-width: 270px;
-    background-color: white;
 }
 
 

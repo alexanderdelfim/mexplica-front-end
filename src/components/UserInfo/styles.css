@@ -1,0 +1,100 @@
+.user-information{
+  margin-top: 20px;
+  max-width: 280px;
+  width: 100%;
+}
+
+#foto-usuario-info {
+  max-width: 50px;
+  max-height: 50px;
+  margin: 5px 5px 0;
+  border-radius: 50%;
+  border: 1px solid rgb(51, 51, 51);
+  padding: 3px;
+}
+
+.title-area {
+  display: flex;
+  padding: 5px 10px;
+  height: 36px;
+  background-color: rgb(241, 241, 241);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.title-area p {
+  font-size: 18px;
+  margin: auto 5px;
+  font-weight: 500;
+}
+
+.information-area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nome-avaliacao {
+  max-width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nome-avaliacao p {
+  color: rgb(51, 51, 51);
+  font-size: 15px;
+  margin: auto 5px 3px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.nome-avaliacao span {
+  width: 100%;
+  margin-left: 5px;
+  margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.monitoria-detalhes {
+  margin-top: 10px;
+}
+
+.monitoria-detalhes p, a {
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 290px;
+}
+
+.information-area {
+  min-height: 60px;
+  padding: 5px 10px;
+  background-color: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#link-test {
+  color: #000;
+}
+
+.publicar-novo {
+  margin-top: 5px;
+  border-top: 1px solid #858585;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.publicar-novo p {
+  font-size: 14px;
+  margin: 5px;
+}
+
+.publicar-novo a {
+  padding: 10px;
+  background-color: cornflowerblue;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 5px;
+}

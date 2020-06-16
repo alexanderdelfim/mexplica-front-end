@@ -7,6 +7,8 @@ import './styles.css';
 
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import UserInfoArea from '../../components/UserInfo/UserInfo'
+
 
 export default function CadastrarMonitoria() {
 
@@ -42,18 +44,7 @@ export default function CadastrarMonitoria() {
         <div className="Main">
             <Header />
                 <div className="cadastro-content">
-                    <div className="usuario">
-                        <div className="usuario-content-here">
-                            <img id="img-perfil-info" src={localStorage.getItem('usuario_foto')} alt={localStorage.getItem('usuario_nome')}/>
-                            <div className="info-user">
-                                <p>{localStorage.getItem('usuario_nome')}</p>
-                                <p id="info-usuario-cad">Informaçoes do usuario.</p>
-                            </div>
-                        </div>
-                    <div className="em-construcao">
-                        <p>Em construção</p>
-                    </div>
-                    </div>
+                    <UserInfoArea />
                     <div className="form-group-monitoria">
                         <form id="monitoria-campos" onSubmit={handleCadastrarMonitoria}>
                             <label htmlFor="nome-monitoria">Nome da monitoria: </label>

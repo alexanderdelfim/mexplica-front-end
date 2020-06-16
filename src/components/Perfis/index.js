@@ -35,11 +35,11 @@ export default class PerfilTeste2 extends Component {
     render() {
         return (
             <div className="Main">
-                <div>
+                <div className="perfil-content">
                     <div>
                         <div className="selecionar-perfil">
                             <div>
-                                <span>Selecione o Perfil: </span>
+                                <h2>Selecione o Perfil: </h2>
                                 <button className="btn-aluno" onClick={() => this.operationAluno()}>Meu Perfil como aluno</button>
                                 <button className="btn-monitor" onClick={() => this.operationMonitor()}>Meu Perfil como monitor</button>
                                 <button className="btn-editar"><Link to="/editar-perfil"><span>Editar</span></Link></button>

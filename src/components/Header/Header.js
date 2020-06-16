@@ -1,91 +1,107 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
 import './styles.css';
 
-import MexplicaLogoHorizontal from '../../assets/img/mexplica-logo-horizontal.svg';
+import MexplicaLogoHorizontal from '../../assets/img/logo-icone.svg';
 
-export default class Header extends Component {
-        render() {
+const Header = () => {
 
-            let isLogged = false;
-            let usuario_nome = '';
-            let usuario_foto = '';
+	const [showInfo, setShowInfo] = useState(false);
+	const [showMonitoriaOptions, setShowMonitoriaOptions] = useState(false);
 
-            if(localStorage.getItem('fbData')) {
-                const data = localStorage.getItem('fbData');
-                const newData = JSON.parse(data);
-                usuario_nome = newData.name;
-                usuario_foto = newData.picture;
-                isLogged = true;
-                localStorage.setItem('usuario_nome', usuario_nome)
-                localStorage.setItem('usuario_foto', usuario_foto)
-                localStorage.setItem('isLogged', isLogged)
-            }
+	function handleShowInfo() {
+		if(showInfo) {
+			setShowInfo(false);
+		} else {
+			setShowInfo(true)
+		}
+	}
 
-            else if(localStorage.getItem('usuario_id')){
-                usuario_nome = localStorage.getItem('usuario_nome');
-                usuario_foto = "https://img.icons8.com/ultraviolet/120/000000/student-male.png"
-                localStorage.setItem('usuario_foto', usuario_foto)/*localStorage.getItem('usuario_foto') */;
-                isLogged = true;
-                localStorage.setItem('isLogged', isLogged)
-            }
+	function handleShowMonitoriaOptions() {
+		if(showMonitoriaOptions) {
+			setShowMonitoriaOptions(false);
+		} else {
+			setShowMonitoriaOptions(true)
+		}
+	}
 
-            function handleLogout() {
-                localStorage.clear();
-            }
+	let isLogged = false;
+	let usuario_nome = '';
+	let usuario_foto = '';
 
-            
-        return (
-            <div className="Header-mexplica">
-                <div className="container-header">
-
-                    <img id="mexplica-logo-svg" onClick={<Link to="/inicio"></Link>} src={MexplicaLogoHorizontal} alt="Mexplica"/>
-                    <div className="toggle-menu">
-                    </div>
-                    <nav className="Navbar">
-                        <ul>
-                            <li className="dropdown-item">
-                                <Link to="/monitorias">Encontrar monitorias</Link> 
-                            </li>
-                            <li className="dropdown-item">
-                            <Link to="/suas-monitorias">Suas monitorias</Link> 
-                                <ul>
-                                    <li className="dropdown-sub-item">
-                                        <Link to="/publicadas">Monitorias publicadas</Link> 
-                                    </li>
-                                    <li className="dropdown-sub-item">
-                                        <Link to="/cadastrar-monitoria">Cadastrar monitoria</Link> 
-                                    </li>
-                                    <li className="dropdown-sub-item">
-                                        <Link to="/solicitacoes-recebidas">Solicitações recebidas</Link> 
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className="search">
-                        <form id="form-group-header" >
-                            <input type="search" name="inp-pesquisa" id="inp-pesquisa"/>
-                            <button type="submit" id="btn-pesquisa">Pesquisar</button>
-                        </form>
-                    </div>
-                    <div className="usuario-info">
-                        <li className="dropdown-user">
-                            <Link to="/perfil" id="user-name"><img id="profile-img" src={usuario_foto} alt={usuario_nome}/><p>{usuario_nome}</p></Link> 
-                            <ul>
-                            <li className="dropdown-user-item">
-                                    <Link to="/perfil">Perfil</Link> 
-                                </li>
-                                <li className="dropdown-user-item">
-                                    <Link onClick={handleLogout} to="/">Sair</Link> 
-                                </li>
-                            </ul>
-                        </li>
-                    </div>
-                </div>
-            </div>
-        )
-    }
+	if(localStorage.getItem('fbData')) {
+		const data = localStorage.getItem('fbData');
+		const newData = JSON.parse(data);
+		usuario_nome = newData.name;
+		usuario_foto = newData.picture;
+		isLogged = true;
+		localStorage.setItem('usuario_nome', usuario_nome)
+		localStorage.setItem('usuario_foto', usuario_foto)
+		localStorage.setItem('isLogged', isLogged)
+	}
+	else if(localStorage.getItem('usuario_id')){
+		usuario_nome = localStorage.getItem('usuario_nome');
+		usuario_foto = "https://img.icons8.com/ultraviolet/120/000000/student-male.png"
+		localStorage.setItem('usuario_foto', usuario_foto)/*localStorage.getItem('usuario_foto') */;
+		isLogged = true;
+		localStorage.setItem('isLogged', isLogged)
+	}
+	function handleLogout() {
+		localStorage.clear();
+	}
+	return (
+		<div className="Header-mexplica">
+			<div className="container-header">
+				<div className="navbar-content">
+					<div className="toggle-menu">
+						<div className="one"></div>
+						<div className="two"></div>
+						<div className="three"></div>
+					</div>
+					<div className="main-bar">
+						<div className="logo-img">
+							<Link id="link-logo" to="/inicio">
+								<img id="mexplica-logo-svg" src={MexplicaLogoHorizontal} alt="Mexplica"/>
+								<h1>Mexplica</h1>
+							</Link>
+						</div>
+						<ul className="topnav">
+							<li className="dropdown-item">
+								<Link to="/monitorias">Encontrar monitorias</Link> 
+							</li>
+							<li className="dropdown-item suas-monitorias-p" onClick={handleShowMonitoriaOptions}> Suas monitorias
+								<ul className={showMonitoriaOptions ? "isVisibleList" : "isNotVisibleList"}>
+									<li className="dropdown-sub-item">
+											<Link to="/publicadas">Monitorias publicadas</Link> 
+									</li>
+									<li className="dropdown-sub-item">
+											<Link to="/cadastrar-monitoria">Cadastrar monitoria</Link> 
+									</li>
+									<li className="dropdown-sub-item">
+											<Link to="/solicitacoes-recebidas">Solicitações recebidas</Link> 
+									</li>
+								</ul>
+							</li>
+							<li className="dropdown-user">
+								<img id="profile-img"  onClick={handleShowInfo} src={usuario_foto} alt={usuario_nome}/>
+								<ul className={showInfo ? "isVisible" : "isNotVisible"}>
+									<li className="dropdown-user-item">
+										<Link to="/perfil">Perfil</Link> 
+									</li>
+									<li className="dropdown-user-item">
+										<Link onClick={handleLogout} to="/">Sair</Link> 
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
 }
+
+export default Header;
+

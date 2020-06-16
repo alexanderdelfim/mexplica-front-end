@@ -1,0 +1,51 @@
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content-alterar {
+  background-color: white;
+  border: 1px solid rgb(180, 171, 171);
+  border-radius: 5px;
+  max-width: 620px;
+  min-height: 420px;
+  width: 100%;
+}
+
+.monitoria-campos h2 {
+  margin-bottom: 10px;
+}
+
+.form-atualizar {
+  margin: 5px;
+  padding: 5px;
+}
+
+.btn-enviar-prop {
+  border: none;
+  background-color: cornflowerblue;
+  border-radius: 3px;
+  margin-top: 15px;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.btn-publicar {
+  padding: 5px 10px;
+}
+
+.flex-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
