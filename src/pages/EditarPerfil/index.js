@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
@@ -9,41 +9,48 @@ import Footer from '../../components/Footer/Footer';
 import Modal from '../../components/Modal/ModalCancelar/ModalBtnCancelar'
 
 export default function CadastrarPerfil() {
-    const [about_me_tutor, setAboutMeTutor] = useState('');
-    const [about_me_student, setAboutMeStudent] = useState('');
-    const [price_per_hour, setPricePerHour] = useState('');
-    const [scope_area, setScopeArea] = useState('');
-    const [tagline, setTagline] = useState('');
-    const [isModalVisible, setIsModalVisible] = useState(false)
+const [about_me_tutor, setAboutMeTutor] = useState('');
+  const [about_me_student, setAboutMeStudent] = useState('');
+  const [price_per_hour, setPricePerHour] = useState('');
+  const [scope_area, setScopeArea] = useState('');
+  const [tagline, setTagline] = useState('');
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const history = useHistory();
 
-    const history = useHistory();
-
-    const loadModal = async (i) => {
-        setIsModalVisible(true);
-    }
+  const loadModal = async (i) => {
+      setIsModalVisible(true);
+  }
+    useEffect(() => {
+        api.get(`http://localhost:3333/users/${localStorage.getItem('usuario_id')}`).then(response => {
+            setAboutMeTutor(response.data.about_me_tutor);
+            setAboutMeStudent(response.data.about_me_student);
+            setPricePerHour(response.data.price_per_hour);
+            setScopeArea(response.data.scope_area);
+            setTagline(response.data.tagline);
+        })
+      }, []);
     
-    async function handleEditarPerfil(e) {
+      async function handleEditarPerfil(e) {
         e.preventDefault();
-
+    
         const data = {
             about_me_tutor,
             about_me_student,
             price_per_hour,
             scope_area,
             tagline
-
         }
- 
+    
         try{
-            const response = await api.put(`http://localhost:3333/users/${localStorage.getItem('usuario_id')}`, data);
-            console.log(response)
+            await api.put(`http://localhost:3333/users/${localStorage.getItem('usuario_id')}`, data);
+            alert('Perfil atualizada com sucesso.')
             localStorage.clear()
             history.push('/login');
-            alert('Perfil cadastrado com sucesso.')
         } catch (err) {
-            alert('Erro no cadastro, tente novamente.')
+            alert('Erro na atualização, tente novamente.')
         }
     }
+
     return (
         <div className="Main">
             <Header />
@@ -59,7 +66,7 @@ export default function CadastrarPerfil() {
                         type="text"
                         name="sobre-mim-monitor"
                         id="sobre-mim-monitor"
-                        placeholder="Ex. Desenvolvimento Web"
+                        placeholder="Ex. Sou estudante de sistemas de informação na Una de Betim e estou procurando  ajudar outros estudantes que possuem dificuldades nas matérias de desenvolvimento web, análise de requisitos e POO. Minhas monitórias são oferecidas por meio de encontros e também em ambientes virtuais."
                         value={about_me_tutor}
                         onChange={e => setAboutMeTutor(e.target.value)}
                     >{localStorage.getItem('about_me_tutor')}</textarea>
@@ -109,7 +116,7 @@ export default function CadastrarPerfil() {
                         type="text"
                         name="sobre-mim-aluno"
                         id="sobre-mim-aluno"
-                        placeholder="Ex. Desenvolvimento Web"
+                        placeholder="Ex. Sou estudante de sistemas de informação na Una de Betim e estou procurando  ajudar outros estudantes que possuem dificuldades nas matérias de desenvolvimento web, análise de requisitos e POO. Minhas monitórias são oferecidas por meio de encontros e também em ambientes virtuais.b"
                         value={about_me_student}
                         onChange={e => setAboutMeStudent(e.target.value)}
                     ></textarea>
