@@ -56,7 +56,7 @@ const [about_me_tutor, setAboutMeTutor] = useState('');
             <Header />
             <div className="container-perfil">
             <form className="form" onSubmit={handleEditarPerfil}>
-                <h1>Alterar dados do perifl</h1>
+                <h1>Alterar dados do perfil</h1>
                 <div className="divisao"></div>
 
                 <h2 className="editar-monitor">Monitor</h2>
